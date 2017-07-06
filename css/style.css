@@ -16,14 +16,11 @@ section{
 section nav{
     text-align: center;
 }
-nav{
-	color: #000;
-}
 nav li{
 	display: inline-block;
     padding: 1em;
 }
 nav li button{
     align-items: center;
-    padding: 4em;
+    padding: 2em;
 }
