@@ -7,22 +7,30 @@
 <body>
 	<nav>
 		<ul>
-			<li><h2>Menu 1</h2></li>
-			<li><h2>Menu 2</h2></li>
-			<li><h2>Menu 3</h2></li>
-			<li><h2>Menu 4</h2></li>
-			<li><h2>Menu 5</h2></li>
+			<li><h2>Opción 1</h2></li>
+			<li><h2>Opción 2</h2></li>
+			<li><h2>Opción 3</h2></li>
 		</ul>
 	</nav>
 	<article>
-		<h1>Hola bienvenidos a mi página web</h1>
-		<p>En esta web hablaremos sobre Programación y otras cosas como la programación </p>
-		<article>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-			sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-			 irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu
-			 r. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-			  anim id est laborum.</article>
+		<script type="text/javascript">
+		
+			var texto1 = "Hola este es un texto de prueba.";
+			var i = 0;
+
+			var id = setInterval(doSomething, 300);
+
+			function doSomething() {
+				if(texto1[i + 1] == null){
+					clearInterval(id);
+				}
+				document.write(texto1[i]);
+				i++;
+			}
+
+
+			document.write(texto1);
+		</script>
 	</article>
 </body>
 </html>
