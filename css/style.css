@@ -12,7 +12,7 @@ header, section{
     padding: 0.5em;
 }
 header, section{
-	text-align: left;
+	text-align: justify;
 	vertical-align: top;
 }
 section nav{
