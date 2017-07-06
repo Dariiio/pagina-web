@@ -3,16 +3,17 @@
 	padding: 0;
 }
 body{
-    text-align: center;
-    width: 85%;
+    text-align: justify;
+    width: 95%;
     font-family: monospace;
+    background: #21252B;
+    color: #C6C8CB;
 }
 header, section{
     display: block;
     padding: 0.5em;
 }
 header, section{
-	text-align: justify;
 	vertical-align: top;
 }
 section nav{
@@ -25,4 +26,10 @@ nav li{
 nav li button{
     align-items: center;
     padding: 2em;
+}
+.caja{
+    background: #282C34;
+    color: #C6C8CB;
+    font-size:1.2em;
+    padding: 0.4em;
 }
