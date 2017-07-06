@@ -4,12 +4,14 @@
 }
 body{
     text-align: center;
+    width: 85%;
+    font-family: monospace;
 }
-header, section, aside{
+header, section{
     display: block;
+    padding: 0.5em;
 }
-section{
-	width: 85%;
+header, section{
 	text-align: left;
 	vertical-align: top;
 }
