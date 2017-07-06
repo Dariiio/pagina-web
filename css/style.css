@@ -1,0 +1,21 @@
+*{
+	margin: 0 auto;
+	padding: 0;
+	border: 0;
+}
+body{
+    text-align: center;
+}
+header, section, aside, footer{
+    display: block;
+}
+nav{
+	color: #000;
+	background: #5676C0;
+	padding: .7em 0em;
+}
+nav li{
+	list-style: none;
+	display: inline-block;
+	margin: 0em .7em;
+}
