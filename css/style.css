@@ -27,6 +27,9 @@ nav li button{
     align-items: center;
     padding: 2em;
 }
+h2{
+	font-size: 1em;
+}
 .caja{
     background: #282C34;
     color: #C6C8CB;

@@ -7,24 +7,33 @@
 	<meta name="viewport" content="initial-scale=1">
 </head>
 <body>
-	<header>
-		<b>CONSOLE: </b>
-		<p>STATUS: ONLINE_</p>
+	<header onload="blink(this)">
+		<b>CONSOLE: </b><br />
+		<b>STATUS: </b>
+		<b id="status">_UNKNOW</b>
 	</header>
 	<section>
 		<b>OUTPUT: </b>
-		<p class="caja">
+		<p class="caja" id="caja">
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 		</p><br />
 		<div class="caja">
 			<b>SEND: </b>
 			<nav>
 				<ul>
-					<li><button>0</button></li>
+					<li><button onclick="changeText(this)">0</button></li>
 					<li><button>1</button></li>
 				</ul>
 			</nav>
 		</div>
 	</section>
+	<script tpye="text/javascript" src="javascript/MyJsLibrary.js">
+
+		var estado = document.getElementById("status");
+		var caja = document.getElementById("caja");
+
+		Hola();
+
+	</script>
 </body>
 </html>
