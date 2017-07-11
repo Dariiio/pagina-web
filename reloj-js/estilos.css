@@ -7,7 +7,7 @@
 }
 
 body{
-    background: rgb(102, 135, 199);
+    background: rgb(93, 164, 180);
     background-size: cover;
     color: #fff;
     font-size: 16px;
@@ -31,17 +31,20 @@ body{
     text-align: center;
     font-size: 1.5em;
     margin-bottom: 0.3125rem;
-    background: rgb(126, 128, 115);
+    background: rgba(103, 98, 79, 0.76);
     padding: 20px;
     width: 100%;
 }
 
 .reloj{
     width: 100%;
+    rgba(193, 49, 157);
+    font-family: fantasy;
+    color: rgb(237, 170, 40);
     padding: 20px;
     font-size: 4em;
     text-align: center;
-    background: rgba(35, 71, 36, 0.78);
+    background: rgba(36, 34, 74, 0.91);
 }
 
 .reloj .caja-segundos {
