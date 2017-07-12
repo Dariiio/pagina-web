@@ -3,15 +3,19 @@
     var estado = document.getElementById('estado');
     var boxText = document.getElementById('boxText');
 
-    /* ANTES ME SALIO, AHORA NO...
-    var escribirTexto = function(elementoText, texto){
-        var tamaño = texto.length
-        elementoText.innerHTML = tamaño;
-    }*/
+    /*
+    var texto = "HOLASD"
+    var i = 0
+    var escribirTexto = function(){
+        if(texto[i + 1]==null){
+            clearInterval(intervalo);
+        }
+        document.write(texto[i]);
+        i++;
+    }
 
-    var nombre = "Neo";
-
-    boxText.textContent = "Hola "+ nombre;
+    intervalo = setInterval(escribirTexto(),25);
     //boxText.innerHTML ="ASDs";
+    */
 
 }())
