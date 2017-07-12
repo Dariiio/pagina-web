@@ -7,56 +7,17 @@
 	<meta name="viewport" content="initial-scale=1">
 </head>
 <body>
-	<header onload="blink(this)">
-		<b>CONSOLE: </b><br />
-		<b>STATUS: </b>
-		<b id="status">_UNKNOW</b>
-	</header>
 	<section>
-		<b>OUTPUT: </b>
-		<p class="caja" id="caja">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		</p><br />
-		<div class="caja">
-			<b>SEND: </b>
-			<nav>
-				<ul>
-					<li><button onclick="changeText(this)" on-touch="changeText(this)">0</button></li>
-					<li><button>1</button></li>
-				</ul>
-			</nav>
+		<div id="caja-terminal" class="caja-ternimal">
+			<div id="output" class="output">
+				<p>STATUS: </p><p id="estado" class="estado">ONLINE</p><br/>
+				<p>\[user@]-></p><p id="boxText">texto prueba asd</p>
+			</div>
+			<div>
+
+			</div>
 		</div>
 	</section>
-	<script tpye="text/javascript">
-
-		var estado = document.getElementById("status");
-		var caja = document.getElementById("caja");
-
-		var stato = false;
-
-		function changeText(id){
-			if (stato){
-				estado.innerHTML = "_ONLINE";
-				estado.style.color = "#52A679";
-				stato = false;
-			}else {
-				estado.innerHTML = "_OFFLINE";
-				estado.style.color = "#E0625F";
-				stato = true;
-			}
-		}
-
-		function blink(f) {
-			setInterval(function() {
-			f.style.display = (f.style.display == 'none' ? '' : 'none');
-			}, 500);
-		}
-
-		function Hola(){
-			document.write("HOla");
-		}
-
-
-	</script>
+	<script tpye="text/javascript" src="javascript/MyJsLibrary.js"></script>
 </body>
 </html>

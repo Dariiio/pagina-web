@@ -1,23 +1,17 @@
-var stato = false;
+(function(){
 
-function changeText(id){
-    if (stato){
-        estado.innerHTML = "_ONLINE";
-        estado.style.color = "#52A679";
-        stato = false;
-    }else {
-        estado.innerHTML = "_OFFLINE";
-        estado.style.color = "#E0625F";
-        stato = true;
-    }
-}
+    var estado = document.getElementById('estado');
+    var boxText = document.getElementById('boxText');
 
-function blink(f) {
-    setInterval(function() {
-    f.style.display = (f.style.display == 'none' ? '' : 'none');
-    }, 500);
-}
+    /* ANTES ME SALIO, AHORA NO...
+    var escribirTexto = function(elementoText, texto){
+        var tamaño = texto.length
+        elementoText.innerHTML = tamaño;
+    }*/
 
-function Hola(){
-    document.write("HOla");
-}
+    var nombre = "Neo";
+
+    boxText.textContent = "Hola "+ nombre;
+    //boxText.innerHTML ="ASDs";
+
+}())

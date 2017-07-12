@@ -6,33 +6,20 @@ body{
     text-align: justify;
     width: 95%;
     font-family: monospace;
-    background: #21252B;
+    background: #000;
     color: #C6C8CB;
 }
-header, section{
-    display: block;
-    padding: 0.5em;
+.caja-ternimal{
+	background: rgb(15, 23, 201);
+	padding: 1em;
 }
-header, section{
-	vertical-align: top;
+.output{
+	background: rgba(125, 139, 217, 0.72);
+	padding: 1em;
 }
-section nav{
-    text-align: center;
-}
-nav li{
+.output p{
 	display: inline-block;
-    padding: 1em;
 }
-nav li button{
-    align-items: center;
-    padding: 2em;
-}
-h2{
-	font-size: 1em;
-}
-.caja{
-    background: #282C34;
-    color: #C6C8CB;
-    font-size:1.2em;
-    padding: 0.4em;
+.estado{
+	color: red;
 }
