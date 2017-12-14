@@ -13,6 +13,9 @@
 <body>
 	<canvas id="myCanvas" width="1000" height="500"></canvas>
 	<button id="btnClean" value="false" onclick="changeValue(this)">BORRAR</button>
+	<button id="btnRed" value="red" onclick="changeColor(this)">ROJO</button>
+	<button id="btnRed" value="blue" onclick="changeColor(this)">AZUL</button>
+	<button id="btnRed" value="green" onclick="changeColor(this)">VERDE</button> 
 	<script type="text/javascript">
 		var canvas = document.getElementById("myCanvas");
 		var ctx = canvas.getContext("2d");
@@ -21,7 +24,7 @@
 		var mouseX;
 		var mouseY;
 		var mouseFill = false;
-
+		var colorMouse = "blue";
 
 
 		setInterval(draw, 0.1);
@@ -31,7 +34,7 @@
 		function drawLapiz(){
 			ctx.beginPath();
 			ctx.arc(mouseX, mouseY, 5, 0, Math.PI*2);
-		    ctx.fillStyle = "#0095DD";
+		    ctx.fillStyle = colorMouse;
 		    if(mouseFill){
 		    	ctx.fill();
 		    } 
@@ -62,7 +65,10 @@
 		}
 		function changeValue(id){
 			btnClean = "true";
-			console.log(btnClean);
+			//console.log(btnClean);
+		}
+		function changeColor(id){
+			colorMouse = id.value;
 		}
 
 		draw();
