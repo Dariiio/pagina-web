@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Game Canvas</title>
+	<style type="text/css">
+		* { padding: 0; margin: 0; }
+		canvas, button {display: inline-block; vertical-align: top;}
+    	canvas { background: #eee; margin: 0 auto; }
+    	button {padding: 2%;}
+	</style>
+</head>
+<body>
+	<canvas id="myCanvas" width="1000" height="500"></canvas>
+	<button id="btnClean" value="false" onclick="changeValue(this)">BORRAR</button>
+	<script type="text/javascript">
+		var canvas = document.getElementById("myCanvas");
+		var ctx = canvas.getContext("2d");
+		var btnClean = document.getElementById("btnClean").value;
+
+		var mouseX;
+		var mouseY;
+		var mouseFill = false;
+
+
+
+		setInterval(draw, 0.1);
+
+		document.addEventListener("mousemove", mouseMoveHandler, false);
+
+		function drawLapiz(){
+			ctx.beginPath();
+			ctx.arc(mouseX, mouseY, 5, 0, Math.PI*2);
+		    ctx.fillStyle = "#0095DD";
+		    if(mouseFill){
+		    	ctx.fill();
+		    } 
+			ctx.closePath();
+		}
+
+		function draw(){
+			if(btnClean == "true"){
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+				btnClean = "false";
+			}
+			drawLapiz();
+			requestAnimationFrame(draw);
+		}
+
+		function update(){
+
+		}
+
+		function mouseMoveHandler(e){
+		    mouseX = e.clientX - canvas.offsetLeft;
+		    mouseY = e.clientY - canvas.offsetTop;
+		    if(e.buttons == 1 && mouseFill == false){
+		    	mouseFill = true;
+		    }else{
+		    	mouseFill = false;
+		    }
+		}
+		function changeValue(id){
+			btnClean = "true";
+			console.log(btnClean);
+		}
+
+		draw();
+
+	</script>
+</body>
+</html>
