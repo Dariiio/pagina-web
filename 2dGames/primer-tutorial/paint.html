@@ -5,17 +5,29 @@
 	<title>Game Canvas</title>
 	<style type="text/css">
 		* { padding: 0; margin: 0; }
-		canvas, button {display: inline-block; vertical-align: top;}
+		canvas, table, button {display:inline-block; vertical-align: top;}
+		table { padding: 2%; }
     	canvas { background: #eee; margin: 0 auto; }
-    	button {padding: 2%;}
+    	button {padding: 10%; height: 50%;}
+    	td { margin: 30%; }
 	</style>
 </head>
 <body>
 	<canvas id="myCanvas" width="1000" height="500"></canvas>
-	<button id="btnClean" value="false" onclick="changeValue(this)">BORRAR</button>
-	<button id="btnRed" value="red" onclick="changeColor(this)">ROJO</button>
-	<button id="btnRed" value="blue" onclick="changeColor(this)">AZUL</button>
-	<button id="btnRed" value="green" onclick="changeColor(this)">VERDE</button> 
+	<table>
+		<tr>
+			<td><button id="btnClean" value="false" onclick="changeValue(this)">BORRAR</button></td>
+			<td><button id="btnRed" value="red" onclick="changeColor(this)">ROJO</button></td>
+			<td><button id="btnRed" value="blue" onclick="changeColor(this)">AZUL</button></td>
+			<td><button id="btnRed" value="green" onclick="changeColor(this)">VERDE</button></td>
+		</tr>
+		<tr>
+			<td><button value=5 onclick="changeRadious(this)"> 5</button></td>
+			<td><button value=10 onclick="changeRadious(this)"> 10</button></td>
+			<td><button value=15 onclick="changeRadious(this)"> 15</button></td>
+			<td><button value=20 onclick="changeRadious(this)"> 20</button></td>
+		</tr>
+	</table>		
 	<script type="text/javascript">
 		var canvas = document.getElementById("myCanvas");
 		var ctx = canvas.getContext("2d");
@@ -25,7 +37,7 @@
 		var mouseY;
 		var mouseFill = false;
 		var colorMouse = "blue";
-
+		var radiousMouse = 10;
 
 		setInterval(draw, 0.1);
 
@@ -33,11 +45,11 @@
 
 		function drawLapiz(){
 			ctx.beginPath();
-			ctx.arc(mouseX, mouseY, 5, 0, Math.PI*2);
+			ctx.arc(mouseX, mouseY, radiousMouse, 0, Math.PI*2, false);
 		    ctx.fillStyle = colorMouse;
 		    if(mouseFill){
 		    	ctx.fill();
-		    } 
+		    }
 			ctx.closePath();
 		}
 
@@ -69,6 +81,9 @@
 		}
 		function changeColor(id){
 			colorMouse = id.value;
+		}
+		function changeRadious(id){
+			radiousMouse = id.value;
 		}
 
 		draw();
