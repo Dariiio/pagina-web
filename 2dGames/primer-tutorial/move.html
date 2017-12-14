@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Game Canvas</title>
+	<style type="text/css">
+		* { padding: 0; margin: 0; }
+    	canvas { background: #eee; display: block; margin: 0 auto; }
+	</style>
+</head>
+<body>
+	<canvas id="myCanvas" width="1000" height="500"></canvas>
+	
+	<script type="text/javascript">
+		var canvas = document.getElementById("myCanvas");
+		var ctx = canvas.getContext("2d");
+
+		var upPressed = false
+		var downPressed = false;
+		var rightPressed = false;
+		var leftPressed = false;
+		var debug = false;
+
+		var playerX = canvas.width/2;
+		var playerY = canvas.height/2;
+		var playerSpeed = 4;
+
+		setInterval(update, 10);
+
+		document.addEventListener("keydown", keyDownHandler, false);
+		document.addEventListener("keyup", keyUpHandler, false);
+
+
+
+		function drawPlayer(){
+			ctx.beginPath();
+			ctx.rect(playerX, playerY, 50, 50);
+			ctx.fillStyle = "blue";
+			ctx.fill();
+			ctx.closePath();
+		}
+
+		function draw(){
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+			drawPlayer();
+
+			requestAnimationFrame(draw);
+		}
+		function update(){
+			if(upPressed && playerY > 0){
+				playerY -=playerSpeed;
+			}
+			if(downPressed && playerY < canvas.height - 50){
+				playerY +=playerSpeed;
+			}
+			if(rightPressed && playerX > 0){
+				playerX -=playerSpeed;
+			}
+			if(leftPressed && playerX < canvas.width - 50){
+				playerX +=playerSpeed;
+			}
+
+			if(debug){
+				console.log(playerY);
+				console.log("heigth");
+				console.log(canvas.height);
+			}
+		}
+
+		function keyDownHandler(evento) {
+		    if(evento.keyCode == 87) {
+		        upPressed = true;
+		    }
+		    else if(evento.keyCode == 83) {
+		        downPressed = true;
+		    }
+		    else if(evento.keyCode == 65) {
+		        rightPressed = true;
+		    }
+		    else if(evento.keyCode == 68) {
+		        leftPressed = true;
+		    }
+		    else if(evento.keyCode == 90) {
+		        debug = true;
+		    }
+		}
+		function keyUpHandler(evento) {
+		    if(evento.keyCode == 87) {
+		        upPressed = false;
+		    }
+		    else if(evento.keyCode == 83) {
+		        downPressed = false;
+		    }
+		    else if(evento.keyCode == 65) {
+		        rightPressed = false;
+		    }
+		    else if(evento.keyCode == 68) {
+		        leftPressed = false;
+		    }
+		    else if(evento.keyCode == 90) {
+		        debug = false;
+		    }
+		}
+
+		draw();
+	</script>
+</body>
+</html>
